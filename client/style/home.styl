@@ -1,0 +1,48 @@
+@import 'jeet'
+@import 'mixins/position.import.styl'
+@import 'mixins/reset.import.styl'
+@import 'mixins/font.import.styl'
+
+//edit()
+
+trueHeight(n)
+  height n
+  line-height n
+
+// Header Styles
+header
+  background rgb(0, 207, 255)
+  color white
+  trueHeight(100px)
+  font-size 1.4em
+  padding 0 20px
+  margin-bottom 20px
+
+main
+  max-width 800px
+  margin 0 auto
+
+form > *
+  display block
+
+form > * + *
+  margin-top 10px
+
+.completed-true
+  text-decoration line-through
+
+.fa-close
+  float right
+  color red
+  font-size 1.3em
+  transition color 0.3s ease
+  cursor pointer
+
+.fa-close:hover
+  color red - 100
+
+.col-10
+  col(5/6)
+
+.col-2
+  col(1/6)

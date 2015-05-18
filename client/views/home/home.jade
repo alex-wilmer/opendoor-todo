@@ -1,2 +1,19 @@
 template(name='home')
-  h1 Hello World!
+  .title New Task
+  form#submitTask
+    input(id='name' name='taskTitle')
+    label(for='name') Name
+    textarea(name='taskDescription')
+    input.waves-effect.waves-light.btn(type='submit')
+
+  .title Existing Tasks
+  +each tasks
+    .task
+      .col-10
+        input.completeTask(id='{{_id}}' name='taskComplete' type='checkbox' checked='{{completed}}')
+        .title(class='completed-{{completed}}')
+          | #{title}
+        .description #{description}
+
+      .col-2
+        i.fa.fa-close(id='{{_id}}')
